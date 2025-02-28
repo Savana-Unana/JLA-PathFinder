@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .schedule {
+            display: grid;
+            grid-template-columns: 100px repeat(7, 1fr);
+            gap: 5px;
+            text-align: center;
+        }
+        .schedule div {
+            padding: 15px;
+            background: white;
+            border: 1px solid #ccc;
+        }
+        .header {
+            font-weight: bold;
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Weekly Schedule</h2>
+    <div class="schedule">
+        <div class="header">Time</div>
+        <div class="header">Monday</div>
+        <div class="header">Tuesday</div>
+        <div class="header">Wednesday</div>
+        <div class="header">Thursday</div>
+        <div class="header">Friday</div>
+        <div class="header">Saturday</div>
+        <div class="header">Sunday</div>
+        
+        <!-- Example Time Slots -->
+        <div>9:00 AM</div>
+        <div>Math</div>
+        <div>English</div>
+        <div>Science</div>
+        <div>History</div>
+        <div>Art</div>
+        <div></div>
+        <div></div>
+        
+        <div>10:00 AM</div>
+        <div>Physics</div>
+        <div>Math</div>
+        <div>English</div>
+        <div>Science</div>
+        <div>History</div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
