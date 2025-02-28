@@ -41,3 +41,19 @@ body {
 .lunch {
     background: #fff3cd;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo-container {
+    text-align: center;  /* Center horizontally */
+    padding: 20px;  /* Add some spacing */
+}
+/* Logo styling */
+.logo {
+    width: 300spx;  /* Adjust size */
+    height: 300spx;
+    display: block;
+}
