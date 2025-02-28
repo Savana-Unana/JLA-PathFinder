@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Schedule</title>
+    <title>Friday Schedule</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,54 +11,85 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+        .schedule-container {
+            width: 60%;
+            margin: auto;
+            overflow-x: auto;
+        }
         .schedule {
             display: grid;
-            grid-template-columns: 100px repeat(7, 1fr);
-            gap: 5px;
+            grid-template-columns: 100px 1fr;
+            border-collapse: collapse;
+            width: 100%;
             text-align: center;
+            background: white;
         }
         .schedule div {
             padding: 15px;
-            background: white;
-            border: 1px solid #ccc;
+            border: 1px solid #999;
+            font-size: 14px;
         }
         .header {
             font-weight: bold;
-            background: #007BFF;
+            background: #0047AB;
             color: white;
+        }
+        .time-slot {
+            background: #ddd;
+            font-weight: bold;
+        }
+        .highlight {
+            background: #d4edda;
+            font-weight: bold;
+        }
+        .break {
+            background: #f8d7da;
+        }
+        .lunch {
+            background: #fff3cd;
         }
     </style>
 </head>
 <body>
-    <h2>Weekly Schedule</h2>
-    <div class="schedule">
-        <div class="header">Time</div>
-        <div class="header">Monday</div>
-        <div class="header">Tuesday</div>
-        <div class="header">Wednesday</div>
-        <div class="header">Thursday</div>
-        <div class="header">Friday</div>
-        <div class="header">Saturday</div>
-        <div class="header">Sunday</div>
-        
-        <!-- Example Time Slots -->
-        <div>9:00 AM</div>
-        <div>Math</div>
-        <div>English</div>
-        <div>Science</div>
-        <div>History</div>
-        <div>Art</div>
-        <div></div>
-        <div></div>
-        
-        <div>10:00 AM</div>
-        <div>Physics</div>
-        <div>Math</div>
-        <div>English</div>
-        <div>Science</div>
-        <div>History</div>
-        <div></div>
-        <div></div>
+    <h2 style="text-align: center;">Friday Schedule</h2>
+    <div class="schedule-container">
+        <div class="schedule">
+            <div class="header">Time</div>
+            <div class="header">Friday</div>
+            
+            <div class="time-slot">7:00 AM</div>
+            <div class="highlight">Tefillah</div>
+            
+            <div class="time-slot">8:00 AM</div>
+            <div class="break">Unscheduled</div>
+            
+            <div class="time-slot">9:00 AM</div>
+            <div class="highlight">Morning Joe</div>
+            
+            <div class="time-slot">10:00 AM</div>
+            <div>Language Lab</div>
+            
+            <div class="time-slot">11:00 AM</div>
+            <div>Soul Center</div>
+            
+            <div class="time-slot">12:00 PM</div>
+            <div class="highlight">Dungeons & Dragons</div>
+            
+            <div class="time-slot">12:30 PM</div>
+            <div class="lunch">Lunch</div>
+            
+            <div class="time-slot">1:00 PM</div>
+            <div>Service Entrepreneurship</div>
+            
+            <div class="time-slot">2:00 PM</div>
+            <div>Service Entrepreneurship</div>
+            
+            <div class="time-slot">3:00 PM</div>
+            <div>Service Entrepreneurship</div>
+            
+            <div class="time-slot">4:00 PM</div>
+            <div class="break">Unscheduled</div>
+        </div>
     </div>
 </body>
 </html>
