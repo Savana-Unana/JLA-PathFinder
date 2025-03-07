@@ -41,6 +41,9 @@ body {
 .lunch {
     background: #fff3cd;
 }
+.logo {
+    height: 115px;
+}
 
 * {
     margin: 0;
