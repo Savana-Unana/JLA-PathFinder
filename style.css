@@ -57,3 +57,11 @@ body {
     height: 300spx;
     display: block;
 }
+.logo-link {
+    display: inline-block; /* Ensures the anchor tag only wraps the image */
+    width: fit-content; /* Makes sure the link is only as wide as the image */
+}
+
+.logo-link img {
+    display: block; /* Prevents extra spacing issues */
+}
