@@ -4,7 +4,7 @@ When the imposter is sus and walks into my mystery with a pizza and some pasta p
 
 ``` bash
 git add -A
-git commit -m "British People Are Bad"
+git commit -m "message"
 git push origin
 
 ```
