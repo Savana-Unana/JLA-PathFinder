@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Location Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        .input-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-section select, .input-section input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .radio-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .radio-buttons label {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .radio-buttons input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        // Define the data structure to store locations for each grade
+        let grade6 = {};
+        let grade7 = {};
+        let grade8 = {};
+        let grade9 = {};
+        let grade10 = {};
+        let grade11 = {};
+
+        function addLocation() {
+            // Get the grade and Friday class inputs from the dropdowns
+            const grade = document.getElementById('grade').value;
+            const fridayClass = document.getElementById('friday-class').value;
+            const location = document.getElementById('location').value;
+
+            if (location === "") {
+                alert("Please enter the location.");
+                return;
+            }
+
+            switch (grade) {
+                case "Grade 6":
+                    grade6[fridayClass] = location;
+                    break;
+                case "Grade 7":
+                    grade7[fridayClass] = location;
+                    break;
+                case "Grade 8":
+                    grade8[fridayClass] = location;
+                    break;
+                case "Grade 9":
+                    grade9[fridayClass] = location;
+                    break;
+                case "Grade 10":
+                    grade10[fridayClass] = location;
+                    break;
+                case "Grade 11":
+                    grade11[fridayClass] = location;
+                    break;
+                default:
+                    alert("Invalid grade entered.");
+            }
+
+            alert("Location added successfully!");
+            clearInputs();
+        }
+
+        function viewLocation() {
+            const grade = document.getElementById('grade').value;
+            let locations = [];
+
+            switch (grade) {
+                case "Grade 6":
+                    locations = grade6;
+                    break;
+                case "Grade 7":
+                    locations = grade7;
+                    break;
+                case "Grade 8":
+                    locations = grade8;
+                    break;
+                case "Grade 9":
+                    locations = grade9;
+                    break;
+                case "Grade 10":
+                    locations = grade10;
+                    break;
+                case "Grade 11":
+                    locations = grade11;
+                    break;
+                default:
+                    alert("Invalid grade entered.");
+                    return;
+            }
+
+            let result = "Your locations for Friday classes are:\n";
+            for (const fridayClass in locations) {
+                result += `${fridayClass}: ${locations[fridayClass]}\n`;
+            }
+
+            alert(result);
+        }
+
+        function handleAction() {
+            const action = document.querySelector('input[name="action"]:checked').value;
+
+            if (action === "add") {
+                addLocation();
+            } else if (action === "view") {
+                viewLocation();
+            }
+        }
+
+        function clearInputs() {
+            document.getElementById('grade').value = "";
+            document.getElementById('friday-class').value = "";
+            document.getElementById('location').value = "";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Class Location Manager</h1>
+
+        <!-- Radio buttons aligned properly with other inputs -->
+        <div class="input-section radio-buttons">
+            <label><input type="radio" name="action" value="add" checked> Add Location</label>
+            <label><input type="radio" name="action" value="view"> View Locations</label>
+        </div>
+
+        <!-- Select for grade -->
+        <div class="input-section" id="grade-section">
+            <label for="grade">Select Grade:</label>
+            <select id="grade">
+                <option value="Grade 6">Grade 6</option>
+                <option value="Grade 7">Grade 7</option>
+                <option value="Grade 8">Grade 8</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+            </select>
+        </div>
+
+        <!-- Select for Friday Class -->
+        <div class="input-section" id="friday-class-section">
+            <label for="friday-class">Select Friday Class:</label>
+            <select id="friday-class">
+                <option value="Advisory">Advisory</option>
+                <option value="Morning Joe">Morning Joe</option>
+                <option value="Language Lab">Language Lab</option>
+                <option value="Soul Center">Soul Center</option>
+                <option value="Clubs">Clubs</option>
+                <option value="SEP">SEP</option>
+            </select>
+        </div>
+
+        <!-- Location input field -->
+        <div class="input-section" id="location-section">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" placeholder="Enter the location of the class">
+        </div>
+
+        <!-- Submit Button -->
+        <button onclick="handleAction()">Submit</button>
+    </div>
+
+    <div class="footer">
+        <p>Developed by Arlan, Shane, Ivri, and Ariel - 2025</p>
+    </div>
+</body>
+</html>
 
